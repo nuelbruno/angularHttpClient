@@ -1,43 +1,43 @@
 # Httpservice
 
-Fake HTTP: https://jsonplaceholder.typicode.com/
+-Fake HTTP: https://jsonplaceholder.typicode.com/
 
 ## Steps
 
-imports [ HttpModule]
+-imports [ HttpModule]
 
 ## Code Sample
 
-  constructor(http: Http) {
+-  constructor(http: Http) {
       http.get('https://jsonplaceholder.typicode.com/posts').subscribe(responce => {
           this.post = responce.json();
       });
-   }
+-   }
 
-   createpost(input: HTMLInputElement) {
+-   createpost(input: HTMLInputElement) {
      let data = {title: input.value};
      this.http.post(this.url, JSON.stringify(data)).subscribe(responce => {
              responce.json().id;
-     });
+ -    });
 
-  updatePost(data) {
+ - updatePost(data) {
     this.http.patch(this.url + '/' + data.id , JSON.stringify({isRead: true}))
     .subscribe(responce => {
          console.log(responce.json());
     });
-  }
+ - }
 
 ## Annotation
 
-<input   (keyup.enter)="createpost(title)" #title type="text">
+- <input   (keyup.enter)="createpost(title)" #title type="text">
 
-  createpost(title: HTMLInputElement) {
+-  createpost(title: HTMLInputElement) {
      
-   }
+ -  }
 
  ## To add data at the top of array use
 
- this.post.splice(0, 0, data);  
+- this.post.splice(0, 0, data);  
 
 ## Initializing this app module in local machine 
 
@@ -52,13 +52,13 @@ npm install
 npm start
 
 ## Moving file to another folder
- mkdir foldername
- mv post.service.* services
- mv setoffiles.* foldername
+- mkdir foldername
+- mv post.service.* services
+- mv setoffiles.* foldername
 
 ## Types of Error
 
--unexpected erro ( server offline, n/w down, unhandled expection)
+- unexpected erro ( server offline, n/w down, unhandled expection)
 
 - expected error
    - not found ( 404), already deleted
@@ -68,10 +68,10 @@ npm start
 
 - need to import catch operator
 - to return obsrevale error in the catch, import observable
--import 'rxjs/add/operator/catch';
--import 'rxjs/add/observable/throw';
--import { Observable } from 'rxjs/Observable';
--import 'rxjs/add/operator/map';
+- import 'rxjs/add/operator/catch';
+- import 'rxjs/add/observable/throw';
+- import { Observable } from 'rxjs/Observable';
+- import 'rxjs/add/operator/map';
 
 ## Global Error Handler 
 
