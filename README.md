@@ -1,30 +1,30 @@
 # Httpservice
 
--Fake HTTP: https://jsonplaceholder.typicode.com/
+- Fake HTTP: https://jsonplaceholder.typicode.com/
 
 ## Steps
 
--imports [ HttpModule]
+- imports [ HttpModule]
 
 ## Code Sample
 
 -  constructor(http: Http) {
-      http.get('https://jsonplaceholder.typicode.com/posts').subscribe(responce => {
-          this.post = responce.json();
-      });
+-     http.get('https://jsonplaceholder.typicode.com/posts').subscribe(responce => {
+-          this.post = responce.json();
+-      });
 -   }
 
 -   createpost(input: HTMLInputElement) {
-     let data = {title: input.value};
-     this.http.post(this.url, JSON.stringify(data)).subscribe(responce => {
-             responce.json().id;
- -    });
+-     let data = {title: input.value};
+-     this.http.post(this.url, JSON.stringify(data)).subscribe(responce => {
+-             responce.json().id;
+-   });
 
- - updatePost(data) {
-    this.http.patch(this.url + '/' + data.id , JSON.stringify({isRead: true}))
-    .subscribe(responce => {
-         console.log(responce.json());
-    });
+- updatePost(data) {
+-    this.http.patch(this.url + '/' + data.id , JSON.stringify({isRead: true}))
+-   .subscribe(responce => {
+-         console.log(responce.json());
+-    });
  - }
 
 ## Annotation
@@ -32,8 +32,7 @@
 - <input   (keyup.enter)="createpost(title)" #title type="text">
 
 -  createpost(title: HTMLInputElement) {
-     
- -  }
+-  }
 
  ## To add data at the top of array use
 
@@ -41,15 +40,15 @@
 
 ## Initializing this app module in local machine 
 
-1: Clone repo
+- 1: Clone repo
 
-git clone https://github.com/nuelbruno/angularHttpClient.git
+- git clone https://github.com/nuelbruno/angularHttpClient.git
 2: Install packages
 
-npm install
-3: Start server (includes auto refreshing) and gulp watcher
+- npm install
+- : Start server (includes auto refreshing) and gulp watcher
 
-npm start
+- npm start
 
 ## Moving file to another folder
 - mkdir foldername
